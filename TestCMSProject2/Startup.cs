@@ -46,8 +46,6 @@ namespace TestCMSProject2
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwagger();
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
