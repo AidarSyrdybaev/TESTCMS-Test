@@ -31,7 +31,7 @@ namespace TestCMSProject2
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" }); 
-                var filePath = Path.Combine(AppContext.BaseDirectory, "SimpleSwagger.xml");
+                var filePath = Path.Combine(AppContext.BaseDirectory, "TestCMSProject2.xml");
                 c.IncludeXmlComments(filePath, includeControllerXmlComments: true);
             });
             var filePath = Path.Combine(AppContext.BaseDirectory, "SimpleSwagger.xml");
@@ -45,6 +45,13 @@ namespace TestCMSProject2
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseHttpsRedirection();
 
