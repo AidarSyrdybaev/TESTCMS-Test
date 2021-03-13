@@ -34,7 +34,7 @@ namespace TestCMSProject2
                 var filePath = Path.Combine(AppContext.BaseDirectory, "SimpleSwagger.xml");
                 c.IncludeXmlComments(filePath, includeControllerXmlComments: true);
             });
-
+            var filePath = Path.Combine(AppContext.BaseDirectory, "SimpleSwagger.xml");
             services.AddControllers();
         }
 
